@@ -32,27 +32,45 @@ $(document).ready(function() {
   myScrabbleTiles.push( { tile: 'D', score: 2 } );
   myScrabbleTiles.push( { tile: 'A', score: 1 } );
   
-    console.log( myScrabbleTiles );
+    console.log( '6 items:', myScrabbleTiles );
 
   // 4. Remove the last tile from myScrabbleTiles.
   myScrabbleTiles.pop();
-    console.log( myScrabbleTiles );
+    console.log( '5 items:', myScrabbleTiles );
 
   // 5. Add the following new tile to myScrabbleTiles:
   /*
     { tile: 'F', score : 4 }
   */
   myScrabbleTiles.push( { tile: 'F', score: 4 } );
-    console.log( myScrabbleTiles );
+    console.log( '6 items:', myScrabbleTiles );
 
+  //------------------------------------------------------------------------------------------------------------------------------------------
+  //ATTENTION: I combined #6, #7, and #8 into one function, and because of the scope of variables, I had to shift instruction around. However,
+  // I did my best to display where each question is!
+  //------------------------------------------------------------------------------------------------------------------------------------------
   // 6. Write a function that takes in an array. The function will use a for-loop and returns the sum of all the scores in the given array.
-  
-  // 7. Use the function above to get the total score for myScrabbleTiles.
-  
-  // 8. Check whether or not your score is higher than the highScore.
+  function arraySum( arr ){
+    let addedArray = 0;
+    for( i = 0; i < myScrabbleTiles.length; i++ ){
+      addedArray += myScrabbleTiles[ i ].score; 
+    } // end for
+
+    // 8. Check whether or not your score is higher than the highScore.
     // 8-1 If your score is higher, change highScore to the new high score.
-  
-  
+    if( addedArray > highScore ){
+      highScore = addedArray
+      console.log( 'the new highScore is:', addedArray );
+    } // end if
+    else{
+      console.log( 'Uh oh, you messed up!' );
+    } // end else
+
+    // 7. Use the function above to get the total score for myScrabbleTiles.
+    console.log( 'score should be 30', addedArray );
+  } // end arraySum
+  arraySum( myScrabbleTiles );
+
 // STRETCH GOALS!!! 
   
   // 9. Using jQuery, Append to the DOM the highScore value.
