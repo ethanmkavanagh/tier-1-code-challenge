@@ -45,10 +45,10 @@ $(document).ready(function() {
   myScrabbleTiles.push( { tile: 'F', score: 4 } );
     console.log( '6 items:', myScrabbleTiles );
 
-  //------------------------------------------------------------------------------------------------------------------------------------------
-  //ATTENTION: I combined #6, #7, and #8 into one function, and because of the scope of variables, I had to shift instruction around. However,
-  // I did my best to display where each question is!
-  //------------------------------------------------------------------------------------------------------------------------------------------
+  //---------------------------------------------------------------------------------------------------------------------------------------------------------
+  //ATTENTION: I combined #6 - #10 into one function, and #7 is at the bottom. Because of the scope of variables, I had to shift instruction around. However,
+  // I did my best to display where each question is! Hopefully it isn't too tricky!
+  //---------------------------------------------------------------------------------------------------------------------------------------------------------
   // 6. Write a function that takes in an array. The function will use a for-loop and returns the sum of all the scores in the given array.
   function arraySum( arr ){
     let addedArray = 0;
@@ -68,14 +68,29 @@ $(document).ready(function() {
 
     // 7. Use the function above to get the total score for myScrabbleTiles.
     console.log( 'score should be 30', addedArray );
+    displayScrabbleH3();
+    displayScrabbleUl();
   } // end arraySum
+
   arraySum( myScrabbleTiles );
 
-// STRETCH GOALS!!! 
-  
-  // 9. Using jQuery, Append to the DOM the highScore value.
-  
-  // 10. Using jQuery, Append to the DOM myScrabbleTiles as an unordered list
+  // STRETCH GOALS!!!
+    // 9. Using jQuery, Append to the DOM the highScore value.
+    function displayScrabbleH3(){
+      let el = $( '#displayHighScoreInh3Tag' );
+      el.empty();
+      el.append( 'displaying highScore in the DOM as a h3 tag: ', highScore, '!' );
+    } // end displayScrabbleH3
+
+    // STRETCH GOALS!!!
+    // 10. Using jQuery, Append to the DOM myScrabbleTiles as an unordered list
+    function displayScrabbleUl(){
+      let el = $( '#displayingHighScoreInUlTag' );
+      el.empty();
+        for( i = 0; i < myScrabbleTiles.length; i++ ){
+          el.append( '<li>' + myScrabbleTiles.tile + ' | ' + myScrabbleTiles.score + '<li>' );
+        } // end for
+    } // end displayScrabbleUl
 
 });
 // DO NOT WRITE CODE BEYOND HERE 
