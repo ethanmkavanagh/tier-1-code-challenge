@@ -10,9 +10,12 @@ $(document).ready(function() {
   // Write your code here!
 
   // 1. Start with the number 29 and set that equal to a variable named ‘highScore’;
-  
+  highScore = 29;
+    console.log( 'highScore should be 29', highScore );
+
   // 2. Make a new empty array called myScrabbleTiles.
-  
+  myScrabbleTiles = [];
+
   // 3. Put these 6 tile objects into myScrabbleTiles:
   /*
     { tile: 'N', score: 1 }
@@ -22,14 +25,26 @@ $(document).ready(function() {
     { tile: 'D', score: 2 }
     { tile: 'A', score: 1 }
   */
+  myScrabbleTiles.push( { tile: 'N', score: 1 } );
+  myScrabbleTiles.push( { tile: 'K', score: 5 } );
+  myScrabbleTiles.push( { tile: 'Z', score: 10 } );
+  myScrabbleTiles.push( { tile: 'X', score: 8 } );
+  myScrabbleTiles.push( { tile: 'D', score: 2 } );
+  myScrabbleTiles.push( { tile: 'A', score: 1 } );
   
+    console.log( myScrabbleTiles );
+
   // 4. Remove the last tile from myScrabbleTiles.
-  
+  myScrabbleTiles.pop();
+    console.log( myScrabbleTiles );
+
   // 5. Add the following new tile to myScrabbleTiles:
   /*
     { tile: 'F', score : 4 }
   */
-  
+  myScrabbleTiles.push( { tile: 'F', score: 4 } );
+    console.log( myScrabbleTiles );
+
   // 6. Write a function that takes in an array. The function will use a for-loop and returns the sum of all the scores in the given array.
   
   // 7. Use the function above to get the total score for myScrabbleTiles.
